@@ -415,6 +415,16 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_blank_watch_background.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Dial.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Dial.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_hum_press_needle.cpp</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_hum_press_needle.cpp</locationURI>
@@ -423,6 +433,11 @@
 			<name>Application/User/generated/image_hum_press_needle_center.cpp</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_hum_press_needle_center.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Needle.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Needle.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_tgfx_logo_white.cpp</name>

@@ -11,7 +11,9 @@ Screen1View::Screen1View() :
     minutes(10),
     seconds(0),
     humidityEntropi(0.0f),
-    pressureEntropi(0.0f)
+    pressureEntropi(0.0f),
+	altitude(0),
+	altDialPi(0.0f)
 {
 }
 
@@ -19,9 +21,6 @@ Screen1View::Screen1View() :
 void Screen1View::setupScreen()
 {
     HAL::getInstance()->setFrameRateCompensation(true);
-
-    // Set hands to initial positions
-    analogClock.setTime24Hour(hours, minutes, seconds);
 }
 
 void Screen1View::tearDownScreen()
@@ -33,7 +32,7 @@ void Screen1View::handleTickEvent()
 {
     ++tickCounter;
 
-    if (tickCounter % 108 == 0)
+    if (tickCounter % TICKS_PER_SEC == 0)
     {
         if (++seconds >= 60)
         {
@@ -53,12 +52,10 @@ void Screen1View::handleTickEvent()
         humidity.setupAnimation(AnimationTextureMapper::Z_ROTATION, humidityEntropi, 250, 0, EasingEquations::cubicEaseInOut);
         humidity.startAnimation();
 
-        // Update pressure
-        pressureEntropi = (((seconds + minutes + hours) * (seconds + minutes + hours)) % 180) / 360.0f * 2 * PI - PI / 2;
-        pressure.setupAnimation(AnimationTextureMapper::Z_ROTATION, pressureEntropi, 250, 0, EasingEquations::cubicEaseInOut);
-        pressure.startAnimation();
-
-        // Update the clock
-        analogClock.setTime24Hour(hours, minutes, seconds);
+        // Update altimeter dial
+        altitude = tickCounter;
+        altDialPi = (altitude % 1000) / 1000.0f * 2 * PI;  // map dial [0, 1000) -> [0, 2PI)
+        altDial.setupAnimation(AnimationTextureMapper::Z_ROTATION, altDialPi, TICKS_CONT_ANIMATION, 0, EasingEquations::cubicEaseInOut);
+        altDial.startAnimation();
     }
 }

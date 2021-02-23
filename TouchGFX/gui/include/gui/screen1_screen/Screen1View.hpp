@@ -8,6 +8,9 @@
 #include <touchgfx/widgets/TextureMapper.hpp>
 #include <touchgfx/widgets/AnimationTextureMapper.hpp>
 
+#define TICKS_PER_SEC 108
+#define TICKS_CONT_ANIMATION ((TICKS_PER_SEC/4)+TICKS_PER_SEC)
+
 class Screen1View : public Screen1ViewBase
 {
 public:
@@ -23,9 +26,10 @@ protected:
     int hours;
     int minutes;
     int seconds;
-
     float humidityEntropi;
     float pressureEntropi;
+    int altitude;
+    float altDialPi;
 };
 
 #endif // SCREEN1_VIEW_HPP
