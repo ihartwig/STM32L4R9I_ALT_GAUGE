@@ -6,6 +6,11 @@ TouchGFX/generated
 # Prerequisites
 *.d
 
+# Compiled info files
+*.su
+*.list
+*.map
+
 # Compiled Object files
 *.slo
 *.lo
@@ -35,3 +40,6 @@ TouchGFX/generated
 *.exe
 *.out
 *.app
+*.bin
+*.elf
+*.hex

@@ -1,0 +1,49 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/freertos.c \
+C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/main.c \
+C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_hal_msp.c \
+C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_hal_timebase_tim.c \
+C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_it.c \
+../Application/User/syscalls.c \
+../Application/User/sysmem.c 
+
+C_DEPS += \
+./Application/User/freertos.d \
+./Application/User/main.d \
+./Application/User/stm32l4xx_hal_msp.d \
+./Application/User/stm32l4xx_hal_timebase_tim.d \
+./Application/User/stm32l4xx_it.d \
+./Application/User/syscalls.d \
+./Application/User/sysmem.d 
+
+OBJS += \
+./Application/User/freertos.o \
+./Application/User/main.o \
+./Application/User/stm32l4xx_hal_msp.o \
+./Application/User/stm32l4xx_hal_timebase_tim.o \
+./Application/User/stm32l4xx_it.o \
+./Application/User/syscalls.o \
+./Application/User/sysmem.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Application/User/freertos.o: C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/freertos.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/freertos.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/main.o: C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/main.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/main.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/stm32l4xx_hal_msp.o: C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_hal_msp.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/stm32l4xx_hal_msp.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/stm32l4xx_hal_timebase_tim.o: C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_hal_timebase_tim.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/stm32l4xx_hal_timebase_tim.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/stm32l4xx_it.o: C:/TouchGFXProjects/STM32L4R9I_ALT_GAUGE/Core/Src/stm32l4xx_it.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/stm32l4xx_it.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/syscalls.o: ../Application/User/syscalls.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/syscalls.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Application/User/sysmem.o: ../Application/User/sysmem.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4R9xx -DUSE_HAL_DRIVER -DDEBUG -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../TouchGFX/target -I../../TouchGFX/App -I../../Drivers/STM32L4xx_HAL_Driver/Inc -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Drivers/BSP/Components/Common -I../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../../Drivers/BSP/STM32L4R9I-DISCOVERY -I../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/BSP/Components/ft3x67 -I../../Drivers/BSP/Components -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/sysmem.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+
