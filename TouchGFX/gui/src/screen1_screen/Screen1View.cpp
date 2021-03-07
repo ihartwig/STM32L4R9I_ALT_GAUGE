@@ -54,7 +54,7 @@ void Screen1View::handleTickEvent()
 
         // Update altimeter dial
         altitude = tickCounter;
-        altDialPi = (altitude % 1000) / 1000.0f * 2 * PI;  // map dial [0, 1000) -> [0, 2PI)
+        altDialPi = altitude / 1000.0f * 2 * PI;  // map dial [0, 1000) -> [0, 2PI)
         altDial.setupAnimation(AnimationTextureMapper::Z_ROTATION, altDialPi, TICKS_CONT_ANIMATION, 0, EasingEquations::cubicEaseInOut);
         altDial.startAnimation();
     }

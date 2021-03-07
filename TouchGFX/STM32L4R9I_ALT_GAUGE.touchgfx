@@ -110,7 +110,7 @@
             "Y": 258,
             "Width": 200,
             "Height": 37,
-            "Visible": true,
+            "Visible": false,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -126,7 +126,7 @@
             "Y": 177,
             "Width": 36,
             "Height": 36,
-            "Visible": true,
+            "Visible": false,
             "LockPosition": true,
             "Draggable": false,
             "Clickable": false,
@@ -179,7 +179,7 @@
             "Alpha": 255,
             "Name": "boxWithBorder1",
             "X": 240,
-            "Y": 121,
+            "Y": 113,
             "Width": 65,
             "Height": 29,
             "Visible": true,
@@ -191,7 +191,7 @@
           },
           {
             "Type": "ScrollWheel",
-            "SelectedItemOffset": 0,
+            "SelectedItemOffset": 15,
             "UseSelectedStyle": false,
             "ExtraSizeBefore": 0,
             "ExtraSizeAfter": 0,
@@ -208,10 +208,62 @@
             "SwipeAcceleration": 1.0,
             "DragAcceleration": 1.0,
             "Name": "altKollsmanInHg",
+            "X": 210,
+            "Y": 100,
+            "Width": 125,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 0,
+            "Alpha": 255,
+            "Name": "boxWithBorder1_2",
             "X": 240,
-            "Y": 122,
+            "Y": 142,
             "Width": 65,
-            "Height": 28,
+            "Height": 20,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 0,
+            "Alpha": 255,
+            "Name": "boxWithBorder1_3",
+            "X": 240,
+            "Y": 99,
+            "Width": 65,
+            "Height": 14,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -232,8 +284,58 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
+            "X": 261,
+            "Y": 100,
+            "Width": 23,
+            "Height": 13,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 2,
+            "Alpha": 255,
+            "Name": "boxWithBorder1_1",
+            "X": 240,
+            "Y": 251,
+            "Width": 65,
+            "Height": 29,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1_1",
             "X": 259,
-            "Y": 107,
+            "Y": 238,
             "Width": 26,
             "Height": 13,
             "Visible": true,
@@ -330,7 +432,7 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "text",
-            "X": 3,
+            "X": 33,
             "Y": 0,
             "Width": 58,
             "Height": 25,
@@ -346,7 +448,7 @@
         "Name": "altKollsmanContainer",
         "X": 0,
         "Y": 0,
-        "Width": 65,
+        "Width": 125,
         "Height": 25
       }
     ],
@@ -361,6 +463,10 @@
       },
       {
         "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId5",
         "IsResource": false
       }
     ],
