@@ -425,6 +425,11 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Alt_Face.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Alt_Face.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_background.cpp</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_background.cpp</locationURI>
@@ -443,6 +448,61 @@
 			<name>Application/User/generated/image_Drum.cpp</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_0.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_1.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_2.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_3.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_3.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_4.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_4.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_5.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_5.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_6.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_6.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_7.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_7.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_8.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_8.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_9.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_9.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Drum_X.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/generated/images/src/image_Drum_X.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_hum_press_needle.cpp</name>
