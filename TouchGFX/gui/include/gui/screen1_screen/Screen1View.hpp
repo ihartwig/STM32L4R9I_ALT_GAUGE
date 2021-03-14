@@ -10,6 +10,7 @@
 
 #define TICKS_PER_SEC 108
 #define TICKS_CONT_ANIMATION ((TICKS_PER_SEC/4)+TICKS_PER_SEC)
+#define KOLLSMAN_ITEMS 101
 
 class Screen1View : public Screen1ViewBase
 {
@@ -20,6 +21,9 @@ public:
     virtual void tearDownScreen();
     virtual void handleTickEvent();
     void setupHand(TextureMapper& hand, const BitmapId bitmapId, int16_t clockRotationCenterX, int16_t clockRotationCenterY, int16_t rotationCenterX, int16_t rotationCenterY);
+    virtual void altKollsmanInHgUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
+    virtual void altKollsmanMbarUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
+
 protected:
 
     int tickCounter;
@@ -30,6 +34,8 @@ protected:
     float pressureEntropi;
     int altitude;
     float altDialPi;
+    static const char * inHgStrings[];
+    static const char * mbarStrings[];
 };
 
 #endif // SCREEN1_VIEW_HPP
