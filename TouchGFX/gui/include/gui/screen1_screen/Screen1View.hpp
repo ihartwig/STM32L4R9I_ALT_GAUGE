@@ -11,6 +11,8 @@
 #define TICKS_PER_SEC 108
 #define TICKS_CONT_ANIMATION ((TICKS_PER_SEC/4)+TICKS_PER_SEC)
 #define KOLLSMAN_ITEMS 101
+#define DRUM_ITEMS 10
+#define DRUM_MAX_TO ((2*DRUM_ITEMS)-1)
 
 class Screen1View : public Screen1ViewBase
 {
@@ -26,6 +28,7 @@ public:
     virtual void altDrum100UpdateItem(altDrumContainer& item, int16_t itemIndex);
     virtual void altKollsmanInHgUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
     virtual void altKollsmanMbarUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
+    virtual void updateAltDisplay(int altForUpdate, int altBefore);
 
 protected:
 
@@ -36,7 +39,6 @@ protected:
     float humidityEntropi;
     float pressureEntropi;
     int altitude;
-    float altDialPi;
     static void updateDrumImage0(altDrumContainer& item, int16_t itemIndex);
     static void updateDrumImageX(altDrumContainer& item, int16_t itemIndex);
     static const char * inHgStrings[];

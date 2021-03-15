@@ -12,8 +12,7 @@ Screen1View::Screen1View() :
     seconds(0),
     humidityEntropi(0.0f),
     pressureEntropi(0.0f),
-	altitude(0),
-	altDialPi(0.0f)
+	altitude(0)
 {
 }
 
@@ -21,11 +20,16 @@ Screen1View::Screen1View() :
 void Screen1View::setupScreen()
 {
     HAL::getInstance()->setFrameRateCompensation(true);
+    // prevent user from moving drums
+    altDrum10k.allowVerticalDrag(false);
+    altDrum1k.allowVerticalDrag(false);
+    altDrum100.allowVerticalDrag(false);
+    // move positions to invoke callback to init display
     altDrum10k.animateToItem(0, 0);
     altDrum1k.animateToItem(0, 0);
     altDrum100.animateToItem(0, 0);
-    altKollsmanInHg.animateToItem(20, 0); // invoke callback to init text
-    altKollsmanMbar.animateToItem(20, 0); // invoke callback to init text
+    altKollsmanInHg.animateToItem(20, 0);
+    altKollsmanMbar.animateToItem(20, 0);
 }
 
 void Screen1View::tearDownScreen()
@@ -58,14 +62,48 @@ void Screen1View::handleTickEvent()
         humidity.startAnimation();
 
         // Update altimeter dial
-        altitude = tickCounter;
-        altDialPi = altitude / 1000.0f * 2 * PI;  // map dial [0, 1000) -> [0, 2PI)
-        altDial.setupAnimation(AnimationTextureMapper::Z_ROTATION, altDialPi, TICKS_CONT_ANIMATION, 0, EasingEquations::cubicEaseInOut);
-        altDial.startAnimation();
+        // updateAltDisplay(tickCounter, altitude);
+        // altitude = tickCounter;
     }
 }
 
-// Screen1ViewBase sets this up as callback for changes to altDrum10k
+// Update the dial and drum displays for this altitude and start animations
+void Screen1View::updateAltDisplay(int altForUpdate, int altBefore)
+{
+    float alt_dial_pi;
+    int16_t alt_drum_100_idx;
+    int16_t alt_drum_1k_idx;
+    int16_t alt_drum_10k_idx;
+    int16_t alt_drum_dir_idx;
+    // dial
+    alt_dial_pi = altForUpdate / 1000.0f * 2 * PI;  // map dial [0, 1000) -> [0, 2PI)
+    altDial.setupAnimation(AnimationTextureMapper::Z_ROTATION, alt_dial_pi, TICKS_CONT_ANIMATION, 0, EasingEquations::cubicEaseInOut);
+    altDial.startAnimation();
+    // determine drum animation direction
+    if (altForUpdate > altBefore) {
+        // ScrollWheel w/ Circular option will animate forward for indexes
+        // up to 1 rev ahead but stumbles on 2+ rev
+        alt_drum_dir_idx = DRUM_ITEMS;
+    }
+    else if (altForUpdate < altBefore) {
+        alt_drum_dir_idx = -DRUM_ITEMS;
+    }
+    else {
+        alt_drum_dir_idx = 0;
+    }
+    // drum
+    alt_drum_10k_idx = (altForUpdate / 10000) %  DRUM_ITEMS;
+    alt_drum_10k_idx += alt_drum_dir_idx;
+    altDrum10k.animateToItem(alt_drum_10k_idx, TICKS_CONT_ANIMATION);
+    alt_drum_1k_idx = (altForUpdate / 1000) % DRUM_ITEMS;
+    alt_drum_1k_idx += alt_drum_dir_idx;
+    altDrum1k.animateToItem(alt_drum_1k_idx, TICKS_CONT_ANIMATION);
+    alt_drum_100_idx = (altForUpdate / 100) % DRUM_ITEMS;
+    alt_drum_100_idx += alt_drum_dir_idx;
+    altDrum100.animateToItem(alt_drum_100_idx, TICKS_CONT_ANIMATION);
+}
+
+// Screen1ViewBase sets this up as callback for changes to altDrum10 k
 void Screen1View::altDrum10kUpdateItem(altDrumContainer& item, int16_t itemIndex)
 {
     updateDrumImageX(item, itemIndex);
@@ -87,12 +125,22 @@ void Screen1View::altDrum100UpdateItem(altDrumContainer& item, int16_t itemIndex
 void Screen1View::altKollsmanInHgUpdateItem(altKollsmanContainer& item, int16_t itemIndex)
 {
     item.updateText(inHgStrings[itemIndex]);
+    // capture the new selected item, not what we are currently loading
+    int16_t selected_idx = altKollsmanInHg.getSelectedItem();
+    presenter->notifyKollsmanIdx(selected_idx);
+    // also update other kollsman window to match
+    altKollsmanMbar.animateToItem(selected_idx, TICKS_CONT_ANIMATION);
 }
 
 // Screen1ViewBase sets this up as callback for changes to altKollsmanMbar
 void Screen1View::altKollsmanMbarUpdateItem(altKollsmanContainer& item, int16_t itemIndex)
 {
     item.updateText(mbarStrings[itemIndex]);
+    // capture the new selected item, not what we are currently loading
+    int16_t selected_idx = altKollsmanMbar.getSelectedItem();
+    presenter->notifyKollsmanIdx(selected_idx);
+    // also update other kollsman window to match
+    altKollsmanInHg.animateToItem(selected_idx, TICKS_CONT_ANIMATION);
 }
 
 void Screen1View::updateDrumImage0(altDrumContainer& item, int16_t itemIndex) {

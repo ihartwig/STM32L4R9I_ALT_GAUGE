@@ -3,6 +3,8 @@
 
 #include <touchgfx/Utils.hpp>
 
+#define TICKS_PER_SEC 108
+
 class ModelListener;
 
 /**
@@ -37,11 +39,16 @@ public:
      * the ModelListener interface.
      */
     void tick();
+
+    void setKollsmanIdx(int newKollsmanIdx);
 protected:
     /**
      * Pointer to the currently active presenter.
      */
     ModelListener* modelListener;
+    int tickCounter;
+    int altitudeFt;
+    int kollsmanIdx;
 };
 
 #endif /* MODEL_HPP */

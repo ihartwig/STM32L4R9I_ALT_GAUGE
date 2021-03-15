@@ -27,10 +27,17 @@ public:
 
     virtual ~Screen1Presenter() {};
 
+    virtual void notifyAltitude(int newAltitudeFt);
+    virtual void notifyKollsmanIdx(int newKollsmanIdx);
+
 private:
     Screen1Presenter();
 
     Screen1View& view;
+
+    // retain the last altitude displayed to determine inc/dec
+    int altitudeFt;
+    int kollsmanIdx;
 };
 
 #endif // SCREEN1_PRESENTER_HPP

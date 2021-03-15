@@ -27,6 +27,9 @@ public:
     {
         model = m;
     }
+
+    virtual void notifyAltitude(int newAltitudeFt);
+
 protected:
     Model* model;
 };
