@@ -10,6 +10,7 @@ public:
     virtual ~altDrumContainer() {}
 
     virtual void initialize();
+    virtual void updateImage(const Bitmap &bitmapForUpdate);
 protected:
 };
 

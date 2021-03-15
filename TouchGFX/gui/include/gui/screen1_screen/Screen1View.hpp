@@ -21,6 +21,9 @@ public:
     virtual void tearDownScreen();
     virtual void handleTickEvent();
     void setupHand(TextureMapper& hand, const BitmapId bitmapId, int16_t clockRotationCenterX, int16_t clockRotationCenterY, int16_t rotationCenterX, int16_t rotationCenterY);
+    virtual void altDrum10kUpdateItem(altDrumContainer& item, int16_t itemIndex);
+    virtual void altDrum1kUpdateItem(altDrumContainer& item, int16_t itemIndex);
+    virtual void altDrum100UpdateItem(altDrumContainer& item, int16_t itemIndex);
     virtual void altKollsmanInHgUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
     virtual void altKollsmanMbarUpdateItem(altKollsmanContainer& item, int16_t itemIndex);
 
@@ -34,6 +37,8 @@ protected:
     float pressureEntropi;
     int altitude;
     float altDialPi;
+    static void updateDrumImage0(altDrumContainer& item, int16_t itemIndex);
+    static void updateDrumImageX(altDrumContainer& item, int16_t itemIndex);
     static const char * inHgStrings[];
     static const char * mbarStrings[];
 };

@@ -21,6 +21,9 @@ Screen1View::Screen1View() :
 void Screen1View::setupScreen()
 {
     HAL::getInstance()->setFrameRateCompensation(true);
+    altDrum10k.animateToItem(0, 0);
+    altDrum1k.animateToItem(0, 0);
+    altDrum100.animateToItem(0, 0);
     altKollsmanInHg.animateToItem(20, 0); // invoke callback to init text
     altKollsmanMbar.animateToItem(20, 0); // invoke callback to init text
 }
@@ -62,16 +65,108 @@ void Screen1View::handleTickEvent()
     }
 }
 
+// Screen1ViewBase sets this up as callback for changes to altDrum10k
+void Screen1View::altDrum10kUpdateItem(altDrumContainer& item, int16_t itemIndex)
+{
+    updateDrumImageX(item, itemIndex);
+}
+
+// Screen1ViewBase sets this up as callback for changes to altDrum1k
+void Screen1View::altDrum1kUpdateItem(altDrumContainer& item, int16_t itemIndex)
+{
+    updateDrumImage0(item, itemIndex);
+}
+
+// Screen1ViewBase sets this up as callback for changes to altDrum100
+void Screen1View::altDrum100UpdateItem(altDrumContainer& item, int16_t itemIndex)
+{
+    updateDrumImage0(item, itemIndex);
+}
+
 // Screen1ViewBase sets this up as callback for changes to altKollsmanInHg
 void Screen1View::altKollsmanInHgUpdateItem(altKollsmanContainer& item, int16_t itemIndex)
 {
     item.updateText(inHgStrings[itemIndex]);
 }
 
-// Screen1ViewBase sets this up as callback for changes to altKollsmanInHg
+// Screen1ViewBase sets this up as callback for changes to altKollsmanMbar
 void Screen1View::altKollsmanMbarUpdateItem(altKollsmanContainer& item, int16_t itemIndex)
 {
     item.updateText(mbarStrings[itemIndex]);
+}
+
+void Screen1View::updateDrumImage0(altDrumContainer& item, int16_t itemIndex) {
+    Bitmap drum_bitmap;
+    switch(itemIndex) {
+    case 1:
+        drum_bitmap = Bitmap(BITMAP_DRUM_1_ID);
+        break;
+    case 2:
+        drum_bitmap = Bitmap(BITMAP_DRUM_2_ID);
+        break;
+    case 3:
+        drum_bitmap = Bitmap(BITMAP_DRUM_3_ID);
+        break;
+    case 4:
+        drum_bitmap = Bitmap(BITMAP_DRUM_4_ID);
+        break;
+    case 5:
+        drum_bitmap = Bitmap(BITMAP_DRUM_5_ID);
+        break;
+    case 6:
+        drum_bitmap = Bitmap(BITMAP_DRUM_6_ID);
+        break;
+    case 7:
+        drum_bitmap = Bitmap(BITMAP_DRUM_7_ID);
+        break;
+    case 8:
+        drum_bitmap = Bitmap(BITMAP_DRUM_8_ID);
+        break;
+    case 9:
+        drum_bitmap = Bitmap(BITMAP_DRUM_9_ID);
+        break;
+    default:
+        drum_bitmap = Bitmap(BITMAP_DRUM_0_ID);
+        break;
+    }
+    item.updateImage(drum_bitmap);
+}
+
+void Screen1View::updateDrumImageX(altDrumContainer& item, int16_t itemIndex) {
+    Bitmap drum_bitmap;
+    switch(itemIndex) {
+    case 1:
+        drum_bitmap = Bitmap(BITMAP_DRUM_1_ID);
+        break;
+    case 2:
+        drum_bitmap = Bitmap(BITMAP_DRUM_2_ID);
+        break;
+    case 3:
+        drum_bitmap = Bitmap(BITMAP_DRUM_3_ID);
+        break;
+    case 4:
+        drum_bitmap = Bitmap(BITMAP_DRUM_4_ID);
+        break;
+    case 5:
+        drum_bitmap = Bitmap(BITMAP_DRUM_5_ID);
+        break;
+    case 6:
+        drum_bitmap = Bitmap(BITMAP_DRUM_6_ID);
+        break;
+    case 7:
+        drum_bitmap = Bitmap(BITMAP_DRUM_7_ID);
+        break;
+    case 8:
+        drum_bitmap = Bitmap(BITMAP_DRUM_8_ID);
+        break;
+    case 9:
+        drum_bitmap = Bitmap(BITMAP_DRUM_9_ID);
+        break;
+    default:
+        drum_bitmap = Bitmap(BITMAP_DRUM_X_ID);
+        break;
+    }
+    item.updateImage(drum_bitmap);
 }
 
 const char * Screen1View::inHgStrings[KOLLSMAN_ITEMS] = {
